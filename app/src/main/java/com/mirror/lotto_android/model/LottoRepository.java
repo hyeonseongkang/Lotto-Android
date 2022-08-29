@@ -1,7 +1,10 @@
 package com.mirror.lotto_android.model;
 
 import android.app.Application;
+import android.os.Build;
+import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -16,6 +19,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.classes.Lotto;
+import com.mirror.lotto_android.classes.TempLotto;
 
 
 import java.text.DecimalFormat;
@@ -31,16 +35,27 @@ public class LottoRepository {
 
     Application application;
     private MutableLiveData<Lotto> lottoData;
+    private MutableLiveData<TempLotto>[] createMyNumber;
+
     JsonObject object;
 
     int weeklyTurn;
 
+    int lottoNum[] = new int[6];
+
     public LottoRepository(Application application) {
         this.application = application;
         lottoData = new MutableLiveData<>();
+        createMyNumber = new MutableLiveData[6];
+        for (int i = 0; i < 6; i++) {
+            createMyNumber[i] = new MutableLiveData<>();
+        }
+
     }
 
     public LiveData<Lotto> getLottoData() {return lottoData;}
+
+    public LiveData<TempLotto>[] getCreateMyNumber() { return createMyNumber; }
 
     // 이번주 로또 데이터 가져오기
     public void getWeeklyLottoData() {
@@ -148,6 +163,60 @@ public class LottoRepository {
             resource = R.drawable.fifth_ball;
         }
         return resource;
+    }
+
+    public void addLottoNumber(int num) {
+        if (lottoNum[5] != 0) {
+            Toast.makeText(application, "더 이상 번호를 입력할 수 없습니다.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        for (int i : lottoNum) {
+            if (i == num) {
+                Toast.makeText(application, "중복되는 번호 입니다.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+
+        int temp;
+        OUT:
+        for (int i = 0; i < lottoNum.length; i++) {
+            if (lottoNum[i] == 0) {
+                lottoNum[i] = num;
+                switch (i) {
+                    case 0:
+                        temp = ballBackground(lottoNum[i]);
+                        createMyNumber[0].setValue(new TempLotto(temp, String.valueOf(lottoNum[i])));
+                        break OUT;
+
+                    case 1:
+                        temp = ballBackground(lottoNum[i]);
+                        createMyNumber[1].setValue(new TempLotto(temp, String.valueOf(lottoNum[i])));
+                        break OUT;
+
+                    case 2:
+                        temp = ballBackground(lottoNum[i]);
+                        createMyNumber[2].setValue(new TempLotto(temp, String.valueOf(lottoNum[i])));
+                        break OUT;
+
+                    case 3:
+                        temp = ballBackground(lottoNum[i]);
+                        createMyNumber[3].setValue(new TempLotto(temp, String.valueOf(lottoNum[i])));
+                        break OUT;
+
+                    case 4:
+                        temp = ballBackground(lottoNum[i]);
+                        createMyNumber[4].setValue(new TempLotto(temp, String.valueOf(lottoNum[i])));
+                        break OUT;
+
+                    case 5:
+                        temp = ballBackground(lottoNum[i]);
+                        createMyNumber[5].setValue(new TempLotto(temp, String.valueOf(lottoNum[i])));
+                        break OUT;
+                }
+            }
+        }
+
     }
 
 }
