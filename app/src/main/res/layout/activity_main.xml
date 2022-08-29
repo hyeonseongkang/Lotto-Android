@@ -368,7 +368,7 @@
                         android:gravity="center">
 
                         <RelativeLayout
-                            android:id="@+id/create_ball"
+                            android:id="@+id/create_lotto"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_margin="20dp">

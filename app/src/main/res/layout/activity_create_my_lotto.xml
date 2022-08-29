@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CreateMyLottoActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/space"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF">
+
+        <ImageButton
+            android:id="@+id/backButtonS"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/close"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFFFFF">
+
+
+                <LinearLayout
+                    android:id="@+id/top"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF">
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/second"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/top"
+                    android:layout_marginTop="10dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_centerHorizontal="true">
+
+                        <RelativeLayout
+                            android:id="@+id/n1"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="1"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n2"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n1"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="2"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n3"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n2"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="3"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n4"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n3"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="4"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n5"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n4"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="5"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n6"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n5"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="6"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n7"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n6"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="7"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/one"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/n8"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="8"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n9"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n8"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="9"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n10"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n9"
+                            android:background="@drawable/first_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="10"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n11"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n10"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="11"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n12"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n11"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="12"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n13"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n12"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="13"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n14"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n13"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="14"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/two"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/n15"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="15"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n16"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n15"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="16"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n17"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n16"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="17"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n18"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n17"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="18"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n19"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n18"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="19"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n20"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n19"
+                            android:background="@drawable/second_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="20"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n21"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n20"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="21"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/three"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/n22"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="22"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n23"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n22"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="23"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n24"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n23"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="24"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n25"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n24"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="25"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n26"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n25"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="26"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n27"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n26"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="27"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n28"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n27"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="28"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/four"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/n29"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="29"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n30"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n29"
+                            android:background="@drawable/third_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="30"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n31"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n30"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="31"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n32"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n31"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="32"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n33"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n32"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="33"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n34"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n33"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="34"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n35"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n34"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="35"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/six"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/five"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/n36"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="36"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n37"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n36"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="37"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n38"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n37"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="38"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n39"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n38"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="39"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n40"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n39"
+                            android:background="@drawable/fourth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="40"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n41"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n40"
+                            android:background="@drawable/fifth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="41"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n42"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n41"
+                            android:background="@drawable/fifth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="42"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/seven"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/six"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/n43"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/fifth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="43"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n44"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n43"
+                            android:background="@drawable/fifth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="44"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n45"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n44"
+                            android:background="@drawable/fifth_ball">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="45"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp"
+                                android:fontFamily="@font/scd4"/>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n46"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n45">
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n47"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n46">
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n48"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n47">
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/n49"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/n48">
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/asd"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/second"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginRight="60dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/random">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/activity_create_my_lotto_auto_create_number_layout"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:background="#FFFFFF"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="자동"
+                            android:textColor="#FF0000"
+                            android:textSize="17dp"
+                            android:layout_centerInParent="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/halfRamdom">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/activity_create_my_lotto_half_auto_create_number_layout"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:background="#FFFFFF"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="반자동"
+                            android:textColor="#000000"
+                            android:textSize="17dp"
+                            android:layout_centerInParent="true" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/secondnext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/asd"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/s11"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/activity_create_my_lotto_non_ball_layout">
+
+                            <TextView
+                                android:id="@+id/sn1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/s2"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/s11"
+                            android:background="@drawable/activity_create_my_lotto_non_ball_layout">
+
+                            <TextView
+                                android:id="@+id/sn2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/s3"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/s2"
+                            android:background="@drawable/activity_create_my_lotto_non_ball_layout">
+
+                            <TextView
+                                android:id="@+id/sn3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/s4"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/s3"
+                            android:background="@drawable/activity_create_my_lotto_non_ball_layout">
+
+                            <TextView
+                                android:id="@+id/sn4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/s5"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/s4"
+                            android:background="@drawable/activity_create_my_lotto_non_ball_layout">
+
+                            <TextView
+                                android:id="@+id/sn5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/s6"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/s5"
+                            android:background="@drawable/activity_create_my_lotto_non_ball_layout">
+
+                            <TextView
+                                android:id="@+id/sn6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/deleteMain"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/s6"
+                            android:background="@drawable/activity_create_my_lotto_cancel_layout">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/close"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="추가된 번호"
+                    android:textSize="15dp"
+                    android:id="@+id/onetwo"
+                    android:layout_marginLeft="20dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:scrollbars="vertical"
+                    android:layout_below="@+id/onetwo"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buy"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="번호생성"
+                android:background="#590099FF"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>
