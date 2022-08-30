@@ -67,10 +67,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        binding.myBall.setOnClickListener(new View.OnClickListener() {
+        binding.myLotto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, MyLottoActivity.class);
+                startActivity(intent);
             }
         });
 

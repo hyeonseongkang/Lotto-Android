@@ -119,7 +119,6 @@ public class CreateMyLottoActivity extends AppCompatActivity {
                     @Override
                     public void onChanged(List<UserLotto> userLottos) {
                         UserLotto userLotto = userLottos.get(userLottos.size() - 1);
-                        lottoViewModel.initLottoBall();
 
                         binding.lastN1.setText(userLotto.getDrwtNo1());
                         binding.lastN2.setText(userLotto.getDrwtNo2());

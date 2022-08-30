@@ -377,6 +377,7 @@ public class LottoRepository {
         protected Void doInBackground(Void... voids) {
             for(int i = 0; i < 6; i++){
                 if(lottoNum[i] == 0){
+                    Log.d(TAG, "Fail");
                     return null;
                 }
             }
@@ -388,6 +389,13 @@ public class LottoRepository {
 
             lottoDao.insert(userLotto);
             return null;
+        }
+
+        // 작업 끝난 뒤 lotto ball 초기화
+        @Override
+        protected void onPostExecute(Void unused) {
+            super.onPostExecute(unused);
+            initLottoBall();
         }
     }
 

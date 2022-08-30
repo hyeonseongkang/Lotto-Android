@@ -7,21 +7,16 @@
     android:orientation="vertical"
     tools:context=".view.CreateMyLottoActivity">
 
-    <RelativeLayout
-        android:id="@+id/space"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:layout_marginTop="10dp"
-        android:background="#FFFFFF">
 
-        <ImageButton
-            android:id="@+id/close_button"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/close" />
-    </RelativeLayout>
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/close" />
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -1295,6 +1290,7 @@
                             android:layout_marginRight="3dp"
                             android:layout_toRightOf="@+id/last_back_2"
                             android:background="@null">
+
                             <TextView
                                 android:id="@+id/last_n_3"
                                 android:layout_width="wrap_content"
@@ -1312,6 +1308,7 @@
                             android:layout_marginRight="3dp"
                             android:layout_toRightOf="@+id/last_back_3"
                             android:background="@null">
+
                             <TextView
                                 android:id="@+id/last_n_4"
                                 android:layout_width="wrap_content"
@@ -1329,6 +1326,7 @@
                             android:layout_marginRight="3dp"
                             android:layout_toRightOf="@+id/last_back_4"
                             android:background="@null">
+
                             <TextView
                                 android:id="@+id/last_n_5"
                                 android:layout_width="wrap_content"
@@ -1347,6 +1345,7 @@
                             android:layout_marginRight="3dp"
                             android:layout_toRightOf="@+id/last_back_5"
                             android:background="@null">
+
                             <TextView
                                 android:id="@+id/last_n_6"
                                 android:layout_width="wrap_content"
@@ -1385,33 +1384,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
-        <LinearLayout
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_lotto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal">
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="#0467DF"
+            android:text="번호생성"
+            android:fontFamily="@font/scd4"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp" />
 
-            <Button
-                android:id="@+id/create_lotto"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:background="#590099FF"
-                android:text="번호생성"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp" />
-
-            <Button
-                android:id="@+id/get_lotto"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:background="#590099FF"
-                android:text="불러오기"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp" />
-
-        </LinearLayout>
 
     </RelativeLayout>
 </LinearLayout>
