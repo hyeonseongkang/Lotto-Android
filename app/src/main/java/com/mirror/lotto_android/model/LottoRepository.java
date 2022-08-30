@@ -2,6 +2,7 @@ package com.mirror.lotto_android.model;
 
 import android.app.Application;
 import android.os.Build;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -20,6 +21,8 @@ import com.google.gson.JsonParser;
 import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.classes.Lotto;
 import com.mirror.lotto_android.classes.TempLotto;
+import com.mirror.lotto_android.retrofit.LottoClient;
+import com.mirror.lotto_android.retrofit.LottoDataResponse;
 
 
 import java.text.DecimalFormat;
@@ -28,6 +31,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class LottoRepository {
 
@@ -69,27 +75,33 @@ public class LottoRepository {
     }
 
     public void requestLottoData(int num) {
-        String url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=" + num;
-        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        Call<LottoDataResponse> retrofitCall = LottoClient.getAPIService().getLotto(String.valueOf(num));
+        retrofitCall.enqueue(new Callback<LottoDataResponse>() {
             @Override
-            public void onResponse(String response) {
-                object = (JsonObject) JsonParser.parseString(response);
-                String returnValue = object.get("returnValue").toString();
-                if (returnValue.equals("\"success\"")) {
-                    String temp_totSellamnt = String.valueOf(object.get("totSellamnt"));        //총판매액
-                    String drwNoDate = String.valueOf(object.get("drwNoDate"));                 //추첨날짜
-                    String temp_firstWinamnt = String.valueOf(object.get("firstWinamnt"));        //1등 1명당 당첨 금액
-                    String firstPrzwnerCo = String.valueOf(object.get("firstPrzwnerCo"));         //1등 당첨자 수
-                    String temp_firstAccumamnt = String.valueOf(object.get("firstAccumamnt"));    //1등 당첨 총 금액
-                    String drwNo = String.valueOf(object.get("drwNo"));
-                    String drwtNo1 = String.valueOf(object.get("drwtNo1"));
-                    String drwtNo2 = String.valueOf(object.get("drwtNo2"));
-                    String drwtNo3 = String.valueOf(object.get("drwtNo3"));
-                    String drwtNo4 = String.valueOf(object.get("drwtNo4"));
-                    String drwtNo5 = String.valueOf(object.get("drwtNo5"));
-                    String drwtNo6 = String.valueOf(object.get("drwtNo6"));
-                    String bnusNo = String.valueOf(object.get("bnusNo"));
+            public void onResponse(Call<LottoDataResponse> call, retrofit2.Response<LottoDataResponse> response) {
+                if (!response.isSuccessful()) {
+                    Log.d(TAG, String.valueOf(response.code()));
+                    return;
+                }
 
+                LottoDataResponse lottoDataResponse = response.body();
+
+                String temp_totSellamnt = lottoDataResponse.getTotSellamnt();
+                String returnValue = lottoDataResponse.getReturnValue();
+                String drwNoDate = lottoDataResponse.getDrwNoDate();
+                String temp_firstWinamnt =lottoDataResponse.getFirstWinamnt();
+                String drwtNo6 = lottoDataResponse.getDrwtNo6();
+                String drwtNo4 = lottoDataResponse.getDrwtNo4();
+                String firstPrzwnerCo= lottoDataResponse.getFirstPrzwnerCo();
+                String drwtNo5 = lottoDataResponse.getDrwtNo5();
+                String bnusNo = lottoDataResponse.getBnusNo();
+                String temp_firstAccumamnt = lottoDataResponse.getFirstAccumamnt();
+                String drwNo = lottoDataResponse.getDrwNo();
+                String drwtNo2 = lottoDataResponse.getDrwtNo2();
+                String drwtNo3 = lottoDataResponse.getDrwtNo3();
+                String drwtNo1 = lottoDataResponse.getDrwtNo1();
+
+                if (returnValue.equals("success")) {
                     long b = Long.parseLong(temp_firstAccumamnt);
                     long d = Long.parseLong(temp_firstWinamnt);
                     long e = Long.parseLong(temp_totSellamnt);
@@ -116,23 +128,15 @@ public class LottoRepository {
                     requestLottoData(weeklyTurn);
                 }
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
 
-            }
-        }){
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
-                return params;
+            public void onFailure(Call<LottoDataResponse> call, Throwable t) {
+                    Log.d(TAG, t.getMessage());
             }
-        };
-        request.setShouldCache(false);
-        RequestQueue requestQueue = Volley.newRequestQueue(application.getApplicationContext());
-        requestQueue.add(request);
+        });
+
     }
-
+    
     public int getNextEpisodeBasedonDate() {
         String startDate = "2002-12-07 23:59:59";
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
