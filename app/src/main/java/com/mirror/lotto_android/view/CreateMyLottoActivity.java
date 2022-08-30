@@ -13,6 +13,7 @@ import com.mirror.lotto_android.databinding.ActivityCreateMyLottoBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
 
 public class CreateMyLottoActivity extends AppCompatActivity {
+    // 전체 바꾸기 control + shift + R
 
     public static final String TAG = "CreateMyLottoActivity";
 
@@ -92,317 +93,331 @@ public class CreateMyLottoActivity extends AppCompatActivity {
             }
         });
 
+        binding.random.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lottoViewModel.randomAddLottoBall();
+            }
+        });
+
+        binding.halfRamdom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lottoViewModel.halfRandomAddLottoBall();
+            }
+        });
+
         binding.n1.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){ lottoViewModel.addLottoNumber(1);
+            public void onClick(View v){ lottoViewModel.addLottoBall(1);
             }
         });
 
         binding.n2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lottoViewModel.addLottoNumber(2);
+                lottoViewModel.addLottoBall(2);
             }
         });
 
         binding.n3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(3);
+                lottoViewModel.addLottoBall(3);
             }
         });
 
         binding.n4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(4);
+                lottoViewModel.addLottoBall(4);
             }
         });
 
         binding.n5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(5);
+                lottoViewModel.addLottoBall(5);
             }
         });
 
         binding.n6.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(6);
+                lottoViewModel.addLottoBall(6);
             }
         });
 
         binding.n7.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(7);
+                lottoViewModel.addLottoBall(7);
             }
         });
 
         binding.n8.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(8);
+                lottoViewModel.addLottoBall(8);
             }
         });
 
         binding.n9.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(9);
+                lottoViewModel.addLottoBall(9);
             }
         });
 
         binding.n10.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(10);
+                lottoViewModel.addLottoBall(10);
             }
         });
 
         binding.n11.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(11);
+                lottoViewModel.addLottoBall(11);
             }
         });
 
         binding.n12.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(12);
+                lottoViewModel.addLottoBall(12);
             }
         });
 
         binding.n13.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(13);
+                lottoViewModel.addLottoBall(13);
             }
         });
 
         binding.n14.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(14);
+                lottoViewModel.addLottoBall(14);
             }
         });
 
         binding.n15.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(15);
+                lottoViewModel.addLottoBall(15);
             }
         });
 
         binding.n16.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(16);
+                lottoViewModel.addLottoBall(16);
             }
         });
 
         binding.n17.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(17);
+                lottoViewModel.addLottoBall(17);
             }
         });
 
         binding.n18.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(18);
+                lottoViewModel.addLottoBall(18);
             }
         });
 
         binding.n19.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(19);
+                lottoViewModel.addLottoBall(19);
             }
         });
 
         binding.n20.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(20);
+                lottoViewModel.addLottoBall(20);
             }
         });
 
         binding.n21.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(21);
+                lottoViewModel.addLottoBall(21);
             }
         });
 
         binding.n22.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(22);
+                lottoViewModel.addLottoBall(22);
             }
         });
 
         binding.n23.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(23);
+                lottoViewModel.addLottoBall(23);
             }
         });
 
         binding.n24.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(24);
+                lottoViewModel.addLottoBall(24);
             }
         });
 
         binding.n25.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(25);
+                lottoViewModel.addLottoBall(25);
             }
         });
 
         binding.n26.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(26);
+                lottoViewModel.addLottoBall(26);
             }
         });
 
         binding.n27.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(27);
+                lottoViewModel.addLottoBall(27);
             }
         });
 
         binding.n28.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(28);
+                lottoViewModel.addLottoBall(28);
             }
         });
 
         binding.n29.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(29);
+                lottoViewModel.addLottoBall(29);
             }
         });
 
         binding.n30.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(30);
+                lottoViewModel.addLottoBall(30);
             }
         });
 
         binding.n31.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(31);
+                lottoViewModel.addLottoBall(31);
             }
         });
 
         binding.n32.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(32);
+                lottoViewModel.addLottoBall(32);
             }
         });
 
         binding.n33.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(33);
+                lottoViewModel.addLottoBall(33);
             }
         });
 
         binding.n34.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(34);
+                lottoViewModel.addLottoBall(34);
             }
         });
 
         binding.n35.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(35);
+                lottoViewModel.addLottoBall(35);
             }
         });
 
         binding.n36.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(36);
+                lottoViewModel.addLottoBall(36);
             }
         });
 
         binding.n37.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(37);
+                lottoViewModel.addLottoBall(37);
             }
         });
 
         binding.n38.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(38);
+                lottoViewModel.addLottoBall(38);
             }
         });
 
         binding.n39.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(39);
+                lottoViewModel.addLottoBall(39);
             }
         });
 
         binding.n40.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(40);
+                lottoViewModel.addLottoBall(40);
             }
         });
 
         binding.n41.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(41);
+                lottoViewModel.addLottoBall(41);
             }
         });
 
         binding.n42.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(42);
+                lottoViewModel.addLottoBall(42);
             }
         });
 
         binding.n43.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(43);
+                lottoViewModel.addLottoBall(43);
             }
         });
 
         binding.n44.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(44);
+                lottoViewModel.addLottoBall(44);
             }
         });
 
         binding.n45.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                lottoViewModel.addLottoNumber(45);
+                lottoViewModel.addLottoBall(45);
             }
         });
     }

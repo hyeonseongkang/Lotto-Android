@@ -37,7 +37,15 @@ public class LottoViewModel extends AndroidViewModel {
         repository.getWeeklyLottoData();
     }
 
-    public void addLottoNumber(int num) { repository.addLottoNumber(num);}
+    public void addLottoBall(int num) { repository.addLottoBall(num);}
 
     public void cancelBall() { repository.cancelBall();}
+
+    public void randomAddLottoBall() {
+        repository.randomAddLottoBall();
+    }
+
+    public void halfRandomAddLottoBall() {
+        repository.halfRandomAddLottoBall();
+    }
 }

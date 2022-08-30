@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CreateMyLottoActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".view.CreateMyLottoActivity">
 
     <RelativeLayout
+        android:id="@+id/space"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:id="@+id/space"
         android:layout_marginTop="10dp"
         android:background="#FFFFFF">
 
@@ -19,9 +18,9 @@
             android:id="@+id/close_button"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:background="@drawable/close"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/close" />
     </RelativeLayout>
 
     <ScrollView
@@ -46,8 +45,8 @@
                     android:id="@+id/top"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="#FFFFFF">
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
 
                 </LinearLayout>
 
@@ -77,10 +76,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="1"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -96,10 +95,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="2"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -115,10 +114,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="3"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -134,10 +133,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="4"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -153,10 +152,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="5"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -172,10 +171,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="6"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -191,10 +190,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="7"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -218,10 +217,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="8"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -237,10 +236,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="9"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -256,10 +255,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="10"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -275,10 +274,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="11"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -294,10 +293,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="12"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -313,10 +312,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="13"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -332,10 +331,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="14"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -359,10 +358,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="15"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -378,10 +377,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="16"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -397,10 +396,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="17"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -416,10 +415,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="18"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -435,10 +434,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="19"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -454,10 +453,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="20"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -473,10 +472,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="21"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -500,10 +499,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="22"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -519,10 +518,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="23"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -538,10 +537,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="24"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -557,10 +556,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="25"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -576,10 +575,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="26"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -595,10 +594,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="27"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -614,10 +613,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="28"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -641,10 +640,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="29"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -660,10 +659,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="30"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -679,10 +678,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="31"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -698,10 +697,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="32"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -717,10 +716,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="33"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -736,10 +735,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="34"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -755,10 +754,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="35"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -782,10 +781,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="36"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -801,10 +800,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="37"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -820,10 +819,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="38"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -839,10 +838,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="39"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -876,10 +875,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="41"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -895,10 +894,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="42"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
                     </RelativeLayout>
 
@@ -922,10 +921,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="43"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4" />
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -941,10 +940,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="44"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -960,10 +959,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
+                                android:fontFamily="@font/scd4"
                                 android:text="45"
                                 android:textColor="#FFFFFF"
-                                android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:textSize="16dp" />
                         </RelativeLayout>
 
                         <RelativeLayout
@@ -1017,66 +1016,71 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_below="@+id/second"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="60dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="60dp"
-                    >
+                    android:orientation="horizontal">
 
                     <RelativeLayout
+                        android:id="@+id/random"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:orientation="horizontal"
-                        android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:id="@+id/random">
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="2"
+                        android:orientation="horizontal">
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/activity_create_my_lotto_auto_create_number_layout"
                             android:layout_marginLeft="3dp"
-                            android:layout_marginRight="3dp" />
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/activity_create_my_lotto_auto_create_number_layout" />
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="22dp"
                             android:layout_centerVertical="true"
-                            android:background="#FFFFFF"/>
+                            android:background="#FFFFFF" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:text="자동"
                             android:textColor="#FF0000"
-                            android:textSize="17dp"
-                            android:layout_centerInParent="true" />
+                            android:textSize="17dp" />
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:id="@+id/halfRamdom"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:orientation="horizontal"
-                        android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
-                        android:id="@+id/halfRamdom">
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="2"
+                        android:orientation="horizontal">
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/activity_create_my_lotto_half_auto_create_number_layout"
                             android:layout_marginLeft="3dp"
-                            android:layout_marginRight="3dp"/>
+                            android:layout_marginRight="3dp"
+                            android:background="@drawable/activity_create_my_lotto_half_auto_create_number_layout" />
+
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="22dp"
                             android:layout_centerVertical="true"
-                            android:background="#FFFFFF"/>
+                            android:background="#FFFFFF" />
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:text="반자동"
                             android:textColor="#000000"
-                            android:textSize="17dp"
-                            android:layout_centerInParent="true" />
+                            android:textSize="17dp" />
                     </RelativeLayout>
 
                 </LinearLayout>
@@ -1214,8 +1218,8 @@
                             <ImageView
                                 android:layout_width="20dp"
                                 android:layout_height="20dp"
-                                android:src="@drawable/close"
-                                android:layout_centerInParent="true"/>
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/close" />
 
                         </RelativeLayout>
                     </RelativeLayout>
@@ -1223,30 +1227,28 @@
             </RelativeLayout>
 
 
-
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                >
+                android:layout_marginTop="10dp">
 
                 <TextView
+                    android:id="@+id/onetwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:text="추가된 번호"
-                    android:textSize="15dp"
-                    android:id="@+id/onetwo"
-                    android:layout_marginLeft="20dp"/>
+                    android:textSize="15dp" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="1dp"
+                    android:layout_below="@+id/onetwo"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="1dp"
                     android:layout_marginRight="20dp"
-                    android:scrollbars="vertical"
-                    android:layout_below="@+id/onetwo"/>
+                    android:scrollbars="vertical" />
 
             </RelativeLayout>
 
@@ -1256,8 +1258,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        >
+        android:layout_alignParentBottom="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -1269,11 +1270,11 @@
                 android:id="@+id/buy"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:text="번호생성"
+                android:layout_weight="1"
                 android:background="#590099FF"
+                android:text="번호생성"
                 android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_weight="1"/>
+                android:textSize="15dp" />
 
         </LinearLayout>
 

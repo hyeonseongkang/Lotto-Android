@@ -28,6 +28,7 @@ import com.mirror.lotto_android.retrofit.LottoDataResponse;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -169,7 +170,7 @@ public class LottoRepository {
         return resource;
     }
 
-    public void addLottoNumber(int num) {
+    public void addLottoBall(int num) {
         if (lottoNum[5] != 0) {
             Toast.makeText(application, "더 이상 번호를 입력할 수 없습니다.", Toast.LENGTH_SHORT).show();
             return;
@@ -260,6 +261,93 @@ public class LottoRepository {
                 return;
             }
         }
+    }
+
+    public void randomAddLottoBall() {
+        initLottoBall();
+        for(int i = 0; i<lottoNum.length; i++){
+            lottoNum[i] = (int)(Math.random()*45)+1;
+
+            for(int j = 0; j<i; j++){
+                if(lottoNum[i] == lottoNum[j]){
+                    i--;
+                    break;
+                }
+            }
+        }
+        Arrays.sort(lottoNum);
+
+        int temp;
+        temp = ballBackground(lottoNum[0]);
+        createMyNumber[0].setValue(new TempLotto(temp, String.valueOf(lottoNum[0])));
+
+        temp = ballBackground(lottoNum[1]);
+        createMyNumber[1].setValue(new TempLotto(temp, String.valueOf(lottoNum[1])));
+
+        temp = ballBackground(lottoNum[2]);
+        createMyNumber[2].setValue(new TempLotto(temp, String.valueOf(lottoNum[2])));
+
+        temp = ballBackground(lottoNum[3]);
+        createMyNumber[3].setValue(new TempLotto(temp, String.valueOf(lottoNum[3])));
+
+        temp = ballBackground(lottoNum[4]);
+        createMyNumber[4].setValue(new TempLotto(temp, String.valueOf(lottoNum[4])));
+
+        temp = ballBackground(lottoNum[5]);
+        createMyNumber[5].setValue(new TempLotto(temp, String.valueOf(lottoNum[5])));
+
+    }
+
+    public void halfRandomAddLottoBall() {
+        if(lottoNum[0] == 0) {
+            Toast.makeText(application, "최소 한개의 번호를 정해주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        int a = 0;
+
+        for(int i = 0; i < lottoNum.length; i++){
+            if(lottoNum[i] == 0){
+                a = i;
+                break;
+            }
+        }
+
+        for(int i = a; i<lottoNum.length; i++){
+            lottoNum[i] = (int)(Math.random()*45)+1;
+
+            for(int j = 0; j<i; j++){
+                if(lottoNum[i] == lottoNum[j]){
+                    i--;
+                    break;
+                }
+            }
+        }
+
+        int temp;
+        temp = ballBackground(lottoNum[0]);
+        createMyNumber[0].setValue(new TempLotto(temp, String.valueOf(lottoNum[0])));
+
+        temp = ballBackground(lottoNum[1]);
+        createMyNumber[1].setValue(new TempLotto(temp, String.valueOf(lottoNum[1])));
+
+        temp = ballBackground(lottoNum[2]);
+        createMyNumber[2].setValue(new TempLotto(temp, String.valueOf(lottoNum[2])));
+
+        temp = ballBackground(lottoNum[3]);
+        createMyNumber[3].setValue(new TempLotto(temp, String.valueOf(lottoNum[3])));
+
+        temp = ballBackground(lottoNum[4]);
+        createMyNumber[4].setValue(new TempLotto(temp, String.valueOf(lottoNum[4])));
+
+        temp = ballBackground(lottoNum[5]);
+        createMyNumber[5].setValue(new TempLotto(temp, String.valueOf(lottoNum[5])));
+    }
+
+    private void initLottoBall(){
+        //initializtion 잇닛셜리제이션 = 초기화
+        for(int i = 0; i<lottoNum.length; i++)
+            lottoNum[i]  = 0;
+
     }
 
 }
