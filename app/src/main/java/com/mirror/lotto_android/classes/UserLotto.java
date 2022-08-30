@@ -1,6 +1,14 @@
 package com.mirror.lotto_android.classes;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "lotto_table")
 public class UserLotto {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
     private String drwtNo1;
     private String drwtNo2;
     private String drwtNo3;
@@ -28,6 +36,14 @@ public class UserLotto {
         this.drwtNo4_background = drwtNo4_background;
         this.drwtNo5_background = drwtNo5_background;
         this.drwtNo6_background = drwtNo6_background;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDrwtNo1() {

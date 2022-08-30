@@ -5,12 +5,16 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.classes.TempLotto;
+import com.mirror.lotto_android.classes.UserLotto;
 import com.mirror.lotto_android.databinding.ActivityCreateMyLottoBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
+
+import java.util.List;
 
 public class CreateMyLottoActivity extends AppCompatActivity {
     // 전체 바꾸기 control + shift + R
@@ -104,6 +108,34 @@ public class CreateMyLottoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 lottoViewModel.halfRandomAddLottoBall();
+            }
+        });
+
+        binding.createLotto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lottoViewModel.insert();
+                lottoViewModel.getAllLottos().observe(CreateMyLottoActivity.this, new Observer<List<UserLotto>>() {
+                    @Override
+                    public void onChanged(List<UserLotto> userLottos) {
+                        UserLotto userLotto = userLottos.get(userLottos.size() - 1);
+                        lottoViewModel.initLottoBall();
+
+                        binding.lastN1.setText(userLotto.getDrwtNo1());
+                        binding.lastN2.setText(userLotto.getDrwtNo2());
+                        binding.lastN3.setText(userLotto.getDrwtNo3());
+                        binding.lastN4.setText(userLotto.getDrwtNo4());
+                        binding.lastN5.setText(userLotto.getDrwtNo5());
+                        binding.lastN6.setText(userLotto.getDrwtNo6());
+
+                        binding.lastBack1.setBackgroundResource(userLotto.getDrwtNo1_background());
+                        binding.lastBack2.setBackgroundResource(userLotto.getDrwtNo2_background());
+                        binding.lastBack3.setBackgroundResource(userLotto.getDrwtNo3_background());
+                        binding.lastBack4.setBackgroundResource(userLotto.getDrwtNo4_background());
+                        binding.lastBack5.setBackgroundResource(userLotto.getDrwtNo5_background());
+                        binding.lastBack6.setBackgroundResource(userLotto.getDrwtNo6_background());
+                    }
+                });
             }
         });
 

@@ -1240,15 +1240,140 @@
                     android:text="추가된 번호"
                     android:textSize="15dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_below="@+id/onetwo"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginRight="20dp"
-                    android:scrollbars="vertical" />
+                    android:layout_marginTop="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="7dp">
+
+                        <RelativeLayout
+                            android:id="@+id/last_back_1"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:background="@null">
+
+                            <TextView
+                                android:id="@+id/last_n_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/last_back_2"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/last_back_1"
+                            android:background="@null">
+
+                            <TextView
+                                android:id="@+id/last_n_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/last_back_3"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/last_back_2"
+                            android:background="@null">
+                            <TextView
+                                android:id="@+id/last_n_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/last_back_4"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/last_back_3"
+                            android:background="@null">
+                            <TextView
+                                android:id="@+id/last_n_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/last_back_5"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/last_back_4"
+                            android:background="@null">
+                            <TextView
+                                android:id="@+id/last_n_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/last_back_6"
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/last_back_5"
+                            android:background="@null">
+                            <TextView
+                                android:id="@+id/last_n_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:textColor="#FFFFFF"
+                                android:textSize="16dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="35dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_toRightOf="@+id/last_back_6"
+                            android:background="@null">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"
+                                android:src="@null" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
 
             </RelativeLayout>
 
@@ -1267,12 +1392,22 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buy"
+                android:id="@+id/create_lotto"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:background="#590099FF"
                 android:text="번호생성"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/get_lotto"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="#590099FF"
+                android:text="불러오기"
                 android:textColor="#FFFFFF"
                 android:textSize="15dp" />
 

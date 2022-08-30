@@ -1,6 +1,7 @@
 package com.mirror.lotto_android.model;
 
 import android.app.Application;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
@@ -9,18 +10,14 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.classes.Lotto;
 import com.mirror.lotto_android.classes.TempLotto;
+import com.mirror.lotto_android.classes.UserLotto;
+import com.mirror.lotto_android.database.LottoDao;
+import com.mirror.lotto_android.database.LottoDatabase;
 import com.mirror.lotto_android.retrofit.LottoClient;
 import com.mirror.lotto_android.retrofit.LottoDataResponse;
 
@@ -31,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -39,6 +37,9 @@ import retrofit2.Callback;
 public class LottoRepository {
 
     public static final String TAG = "LottoRepository";
+
+    private LottoDao lottoDao;
+    private LiveData<List<UserLotto>> allLottos;
 
     Application application;
     private MutableLiveData<Lotto> lottoData;
@@ -58,7 +59,19 @@ public class LottoRepository {
             createMyNumber[i] = new MutableLiveData<>();
         }
 
+        LottoDatabase database = LottoDatabase.getInstance(application);
+        lottoDao = database.lottoDao();
+        allLottos = lottoDao.getAllLottos();
+
     }
+
+    public void insert() { new InsertLottoAsyncTask(lottoDao).execute(); }
+
+    public void delete(UserLotto userLotto) { new DeleteLottoAsyncTask(lottoDao).execute(userLotto);}
+
+    public void deleteAllLottos() { new DeleteAllLottosAsyncTask(lottoDao).execute();}
+
+    public LiveData<List<UserLotto>> getAllLottos() { return allLottos;}
 
     public LiveData<Lotto> getLottoData() {return lottoData;}
 
@@ -343,11 +356,63 @@ public class LottoRepository {
         createMyNumber[5].setValue(new TempLotto(temp, String.valueOf(lottoNum[5])));
     }
 
-    private void initLottoBall(){
-        //initializtion 잇닛셜리제이션 = 초기화
+    public void initLottoBall(){
         for(int i = 0; i<lottoNum.length; i++)
             lottoNum[i]  = 0;
 
+        createMyNumber[0].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+        createMyNumber[1].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+        createMyNumber[2].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+        createMyNumber[3].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+        createMyNumber[4].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+        createMyNumber[5].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+    }
+
+    private class InsertLottoAsyncTask extends AsyncTask<Void, Void, Void> {
+        private LottoDao lottoDao;
+
+        private InsertLottoAsyncTask(LottoDao lottoDao) { this.lottoDao = lottoDao;}
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            for(int i = 0; i < 6; i++){
+                if(lottoNum[i] == 0){
+                    return null;
+                }
+            }
+
+            Arrays.sort(lottoNum);
+
+            UserLotto userLotto = new UserLotto(String.valueOf(lottoNum[0]), String.valueOf(lottoNum[1]), String.valueOf(lottoNum[2]), String.valueOf(lottoNum[3]), String.valueOf(lottoNum[4]), String.valueOf(lottoNum[5]),
+                    ballBackground(lottoNum[0]), ballBackground(lottoNum[1]), ballBackground(lottoNum[2]), ballBackground(lottoNum[3]), ballBackground(lottoNum[4]), ballBackground(lottoNum[5]));
+
+            lottoDao.insert(userLotto);
+            return null;
+        }
+    }
+
+    private static class DeleteLottoAsyncTask extends AsyncTask<UserLotto, Void, Void> {
+        private LottoDao lottoDao;
+
+        private DeleteLottoAsyncTask(LottoDao lottoDao) { this.lottoDao = lottoDao;}
+
+        @Override
+        protected Void doInBackground(UserLotto... userLottos) {
+            lottoDao.delete(userLottos[0]);
+            return null;
+        }
+    }
+
+    private static class DeleteAllLottosAsyncTask extends AsyncTask<Void, Void, Void> {
+        private LottoDao lottoDao;
+
+        private DeleteAllLottosAsyncTask(LottoDao lottoDao) { this.lottoDao = lottoDao;}
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            lottoDao.deleteAllLottos();
+            return null;
+        }
     }
 
 }
