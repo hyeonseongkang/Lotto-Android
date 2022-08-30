@@ -136,7 +136,7 @@ public class LottoRepository {
         });
 
     }
-    
+
     public int getNextEpisodeBasedonDate() {
         String startDate = "2002-12-07 23:59:59";
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
@@ -221,6 +221,45 @@ public class LottoRepository {
             }
         }
 
+    }
+
+    public void cancelBall() {
+        if (lottoNum[0] == 0)
+            return;
+
+        int temp;
+        OUT:
+        for(int i = 5; 5 >= 0; i--){
+            if(lottoNum[i] != 0){
+                lottoNum[i] = 0;
+                switch (i){
+                    case 0:
+                        createMyNumber[0].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+                        break OUT;
+
+                    case 1 :
+                        createMyNumber[1].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+                        break OUT;
+
+                    case 2 :
+                        createMyNumber[2].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+                        break OUT;
+
+                    case 3 :
+                        createMyNumber[3].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+                        break OUT;
+
+                    case 4 :
+                        createMyNumber[4].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+                        break OUT;
+
+                    case 5 :
+                        createMyNumber[5].setValue(new TempLotto(R.drawable.activity_create_my_lotto_non_ball_layout, ""));
+                        break OUT;
+                }
+                return;
+            }
+        }
     }
 
 }

@@ -1203,7 +1203,7 @@
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:id="@+id/deleteMain"
+                            android:id="@+id/cancel_ball"
                             android:layout_width="35dp"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="3dp"

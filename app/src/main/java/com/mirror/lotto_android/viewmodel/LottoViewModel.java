@@ -38,4 +38,6 @@ public class LottoViewModel extends AndroidViewModel {
     }
 
     public void addLottoNumber(int num) { repository.addLottoNumber(num);}
+
+    public void cancelBall() { repository.cancelBall();}
 }

@@ -85,6 +85,13 @@ public class CreateMyLottoActivity extends AppCompatActivity {
             }
         });
 
+        binding.cancelBall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lottoViewModel.cancelBall();
+            }
+        });
+
         binding.n1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){ lottoViewModel.addLottoNumber(1);
@@ -398,7 +405,5 @@ public class CreateMyLottoActivity extends AppCompatActivity {
                 lottoViewModel.addLottoNumber(45);
             }
         });
-
-
     }
 }
