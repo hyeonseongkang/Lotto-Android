@@ -10,30 +10,33 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mirror.lotto_android.R;
-import com.mirror.lotto_android.classes.MyLotto;
+import com.mirror.lotto_android.classes.CheckMyLotto;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyLottoAdapter extends RecyclerView.Adapter<MyLottoAdapter.LottoHolder> {
+public class CheckMyLottoAdapter extends RecyclerView.Adapter<CheckMyLottoAdapter.LottoHolder> {
 
-    private List<MyLotto> lottos = new ArrayList<>();
+    private List<CheckMyLotto> lottos = new ArrayList<>();
 
     @NonNull
     @NotNull
     @Override
     public LottoHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.my_lotto_item, parent, false);
+                .inflate(R.layout.check_my_lotto_item, parent, false);
 
         return new LottoHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull LottoHolder holder, int position) {
-        MyLotto userLotto = lottos.get(position);
+        CheckMyLotto userLotto = lottos.get(position);
+
+        holder.grade.setText(userLotto.getGrade());
+
         holder.back1.setBackgroundResource(userLotto.getDrwtNo1_background());
         holder.back2.setBackgroundResource(userLotto.getDrwtNo2_background());
         holder.back3.setBackgroundResource(userLotto.getDrwtNo3_background());
@@ -54,12 +57,12 @@ public class MyLottoAdapter extends RecyclerView.Adapter<MyLottoAdapter.LottoHol
         return lottos == null ? 0 : lottos.size();
     }
 
-    public void setLottos(List<MyLotto> lottos) {
+    public void setLottos(List<CheckMyLotto> lottos) {
         this.lottos = lottos;
         notifyDataSetChanged();
     }
 
-    public MyLotto getLottoAt(int position) { return lottos.get(position);}
+    public CheckMyLotto getLottoAt(int position) { return lottos.get(position);}
 
     class LottoHolder extends RecyclerView.ViewHolder {
         private RelativeLayout back1;
@@ -75,6 +78,8 @@ public class MyLottoAdapter extends RecyclerView.Adapter<MyLottoAdapter.LottoHol
         private TextView num4;
         private TextView num5;
         private TextView num6;
+
+        private TextView grade;
 
         public LottoHolder(View itemView) {
             super(itemView);
@@ -92,6 +97,7 @@ public class MyLottoAdapter extends RecyclerView.Adapter<MyLottoAdapter.LottoHol
             num5 = itemView.findViewById(R.id.num5);
             num6 = itemView.findViewById(R.id.num6);
 
+            grade = itemView.findViewById(R.id.grade);
         }
 
     }

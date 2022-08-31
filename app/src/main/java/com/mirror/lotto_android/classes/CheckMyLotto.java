@@ -1,13 +1,8 @@
 package com.mirror.lotto_android.classes;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+public class CheckMyLotto {
 
-@Entity(tableName = "lotto_table")
-public class UserLotto {
-
-    @PrimaryKey(autoGenerate = true)
-    private int id;
+    private String grade;
 
     private String drwtNo1;
     private String drwtNo2;
@@ -23,7 +18,8 @@ public class UserLotto {
     private int drwtNo5_background;
     private int drwtNo6_background;
 
-    public UserLotto(String drwtNo1, String drwtNo2, String drwtNo3, String drwtNo4, String drwtNo5, String drwtNo6, int drwtNo1_background, int drwtNo2_background, int drwtNo3_background, int drwtNo4_background, int drwtNo5_background, int drwtNo6_background) {
+    public CheckMyLotto(String grade, String drwtNo1, String drwtNo2, String drwtNo3, String drwtNo4, String drwtNo5, String drwtNo6, int drwtNo1_background, int drwtNo2_background, int drwtNo3_background, int drwtNo4_background, int drwtNo5_background, int drwtNo6_background) {
+        this.grade = grade;
         this.drwtNo1 = drwtNo1;
         this.drwtNo2 = drwtNo2;
         this.drwtNo3 = drwtNo3;
@@ -38,12 +34,8 @@ public class UserLotto {
         this.drwtNo6_background = drwtNo6_background;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public String getGrade() {
+        return grade;
     }
 
     public String getDrwtNo1() {

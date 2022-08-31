@@ -9,11 +9,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.mirror.lotto_android.adapter.MyLottoAdapter;
-import com.mirror.lotto_android.classes.UserLotto;
+import com.mirror.lotto_android.classes.MyLotto;
 import com.mirror.lotto_android.databinding.ActivityMyLottoListBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
 
@@ -42,9 +41,9 @@ public class MyLottoListActivity extends AppCompatActivity {
         binding.recyclerView.setAdapter(adapter);
 
         lottoViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(LottoViewModel.class);
-        lottoViewModel.getAllLottos().observe(this, new Observer<List<UserLotto>>() {
+        lottoViewModel.getAllLottos().observe(this, new Observer<List<MyLotto>>() {
             @Override
-            public void onChanged(List<UserLotto> userLottos) {
+            public void onChanged(List<MyLotto> userLottos) {
                 binding.progress.setVisibility(View.GONE);
                 adapter.setLottos(userLottos);
 //                for (UserLotto userLotto: userLottos) {

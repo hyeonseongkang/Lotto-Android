@@ -6,7 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.mirror.lotto_android.classes.UserLotto;
+import com.mirror.lotto_android.classes.MyLotto;
 
 import java.util.List;
 
@@ -14,15 +14,18 @@ import java.util.List;
 public interface LottoDao {
 
     @Insert
-    void insert(UserLotto lotto);
+    void insert(MyLotto lotto);
 
     @Delete
-    void delete(UserLotto lotto);
+    void delete(MyLotto lotto);
 
     @Query("DELETE FROM lotto_table")
     void deleteAllLottos();
 
     @Query("SELECT * FROM lotto_table")
-    LiveData<List<UserLotto>> getAllLottos();
+    LiveData<List<MyLotto>> getAllLottos();
+
+    @Query("SELECT * FROM lotto_table")
+    List<MyLotto> getAllMyLottos();
 
 }

@@ -1,21 +1,22 @@
 package com.mirror.lotto_android.model;
 
 import android.app.Application;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.core.content.ContextCompat;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
 
-import com.google.gson.JsonObject;
 import com.mirror.lotto_android.R;
+import com.mirror.lotto_android.classes.CheckMyLotto;
 import com.mirror.lotto_android.classes.Lotto;
+import com.mirror.lotto_android.classes.MyLotto;
 import com.mirror.lotto_android.classes.TempLotto;
-import com.mirror.lotto_android.classes.UserLotto;
 import com.mirror.lotto_android.database.LottoDao;
 import com.mirror.lotto_android.database.LottoDatabase;
 import com.mirror.lotto_android.retrofit.LottoClient;
@@ -25,11 +26,10 @@ import com.mirror.lotto_android.retrofit.LottoDataResponse;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,16 +39,16 @@ public class LottoRepository {
     public static final String TAG = "LottoRepository";
 
     private LottoDao lottoDao;
-    private LiveData<List<UserLotto>> allLottos;
+    private LiveData<List<MyLotto>> allLottos;
+    private MutableLiveData<List<CheckMyLotto>> allCheckLottos;
 
     Application application;
     private MutableLiveData<Lotto> lottoData;
     private MutableLiveData<TempLotto>[] createMyNumber;
 
-    JsonObject object;
-
     int weeklyTurn;
 
+    List<MyLotto> myLottos;
     int lottoNum[] = new int[6];
 
     public LottoRepository(Application application) {
@@ -62,16 +62,20 @@ public class LottoRepository {
         LottoDatabase database = LottoDatabase.getInstance(application);
         lottoDao = database.lottoDao();
         allLottos = lottoDao.getAllLottos();
-
+        allCheckLottos = new MutableLiveData<>();
+        myLottos = new ArrayList<>();
+      //  myLottos = lottoDao.getAllMyLottos();
     }
 
     public void insert() { new InsertLottoAsyncTask(lottoDao).execute(); }
 
-    public void delete(UserLotto userLotto) { new DeleteLottoAsyncTask(lottoDao).execute(userLotto);}
+    public void delete(MyLotto userLotto) { new DeleteLottoAsyncTask(lottoDao).execute(userLotto);}
 
     public void deleteAllLottos() { new DeleteAllLottosAsyncTask(lottoDao).execute();}
 
-    public LiveData<List<UserLotto>> getAllLottos() { return allLottos;}
+    public LiveData<List<MyLotto>> getAllLottos() { return allLottos;}
+
+    public LiveData<List<CheckMyLotto>> getAllCheckLottos() { return allCheckLottos;}
 
     public LiveData<Lotto> getLottoData() {return lottoData;}
 
@@ -389,7 +393,7 @@ public class LottoRepository {
 
             Arrays.sort(lottoNum);
 
-            UserLotto userLotto = new UserLotto(String.valueOf(lottoNum[0]), String.valueOf(lottoNum[1]), String.valueOf(lottoNum[2]), String.valueOf(lottoNum[3]), String.valueOf(lottoNum[4]), String.valueOf(lottoNum[5]),
+            MyLotto userLotto = new MyLotto(String.valueOf(lottoNum[0]), String.valueOf(lottoNum[1]), String.valueOf(lottoNum[2]), String.valueOf(lottoNum[3]), String.valueOf(lottoNum[4]), String.valueOf(lottoNum[5]),
                     ballBackground(lottoNum[0]), ballBackground(lottoNum[1]), ballBackground(lottoNum[2]), ballBackground(lottoNum[3]), ballBackground(lottoNum[4]), ballBackground(lottoNum[5]));
 
             lottoDao.insert(userLotto);
@@ -404,13 +408,13 @@ public class LottoRepository {
         }
     }
 
-    private static class DeleteLottoAsyncTask extends AsyncTask<UserLotto, Void, Void> {
+    private static class DeleteLottoAsyncTask extends AsyncTask<MyLotto, Void, Void> {
         private LottoDao lottoDao;
 
         private DeleteLottoAsyncTask(LottoDao lottoDao) { this.lottoDao = lottoDao;}
 
         @Override
-        protected Void doInBackground(UserLotto... userLottos) {
+        protected Void doInBackground(MyLotto... userLottos) {
             lottoDao.delete(userLottos[0]);
             return null;
         }
@@ -426,6 +430,80 @@ public class LottoRepository {
             lottoDao.deleteAllLottos();
             return null;
         }
+    }
+
+    public void checkMyLotto(Lotto lotto) {
+        List<String> lottoNum = new ArrayList<>();
+        lottoNum.add(lotto.getDrwtNo1());
+        lottoNum.add(lotto.getDrwtNo2());
+        lottoNum.add(lotto.getDrwtNo3());
+        lottoNum.add(lotto.getDrwtNo4());
+        lottoNum.add(lotto.getDrwtNo5());
+        lottoNum.add(lotto.getDrwtNo6());
+        lottoNum.add(lotto.getBnusNo());
+
+        List<CheckMyLotto> checkMyLottos = new ArrayList<>();
+
+        for (MyLotto myLotto: allLottos.getValue()) {
+            int count = 0;
+            String grade = "꽝";
+            List<String> myLottoNum = new ArrayList<>();
+            myLottoNum.add(myLotto.getDrwtNo1());
+            myLottoNum.add(myLotto.getDrwtNo2());
+            myLottoNum.add(myLotto.getDrwtNo3());
+            myLottoNum.add(myLotto.getDrwtNo4());
+            myLottoNum.add(myLotto.getDrwtNo5());
+            myLottoNum.add(myLotto.getDrwtNo6());
+
+            int[] myLottoNumBackground = {R.drawable.activity_main_basics_ball,
+                    R.drawable.activity_main_basics_ball,
+                    R.drawable.activity_main_basics_ball,
+                    R.drawable.activity_main_basics_ball,
+                    R.drawable.activity_main_basics_ball,
+                    R.drawable.activity_main_basics_ball};
+
+            System.out.println("------------");
+            System.out.println(myLottoNum.get(0) + " " + myLottoNum.get(1) + " " + myLottoNum.get(2) + " " +
+                    myLottoNum.get(3) + " " + myLottoNum.get(4) + " " + myLottoNum.get(5));
+            for (int i = 0;  i < 6; i++) {
+
+                if (myLottoNum.contains(lottoNum.get(i))) {
+                    int position = myLottoNum.indexOf(lottoNum.get(i));
+                    myLottoNumBackground[position] = ballBackground(Integer.parseInt(lottoNum.get(i)));
+                    System.out.print("[" + i + "] [" + position + "] " + lottoNum.get(i) + " ");
+                    count++;
+                }
+            }
+            System.out.println("\n------------\n");
+
+            // bunus 맞췄을 시 검정색 ball
+            if (myLottoNum.contains(lottoNum.get(6))) {
+                int position = myLottoNum.indexOf(lottoNum.get(6));
+                myLottoNumBackground[position] = R.drawable.bunus_ball;
+            }
+
+            if (count == 3) {
+                grade = "5등";
+            } else if (count == 4) {
+                grade = "4등";
+            } else if (count == 5) {
+                if (myLottoNum.contains(lottoNum.get(6))) {
+                    grade = "2등";
+                } else {
+                    grade = "3등";
+                }
+            } else if (count == 6) {
+                grade = "1등";
+            }
+
+            CheckMyLotto checkMyLotto = new CheckMyLotto(grade,
+                    myLottoNum.get(0), myLottoNum.get(1), myLottoNum.get(2), myLottoNum.get(3), myLottoNum.get(4), myLottoNum.get(5),
+                    myLottoNumBackground[0], myLottoNumBackground[1], myLottoNumBackground[2], myLottoNumBackground[3], myLottoNumBackground[4], myLottoNumBackground[5]);
+
+            checkMyLottos.add(checkMyLotto);
+
+        }
+       allCheckLottos.setValue(checkMyLottos);
     }
 
 }

@@ -6,12 +6,13 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
-import com.mirror.lotto_android.R;
-import com.mirror.lotto_android.adapter.MyLottoAdapter;
+import com.mirror.lotto_android.adapter.CheckMyLottoAdapter;
+import com.mirror.lotto_android.classes.CheckMyLotto;
 import com.mirror.lotto_android.classes.Lotto;
-import com.mirror.lotto_android.classes.UserLotto;
+import com.mirror.lotto_android.classes.MyLotto;
 import com.mirror.lotto_android.databinding.ActivityCheckMyLottoBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
 
@@ -24,6 +25,8 @@ public class CheckMyLottoActivity extends AppCompatActivity {
 
     private LottoViewModel lottoViewModel;
 
+    Lotto selectedLotto;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +36,7 @@ public class CheckMyLottoActivity extends AppCompatActivity {
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setHasFixedSize(true);
 
-        MyLottoAdapter adapter = new MyLottoAdapter();
+        CheckMyLottoAdapter adapter = new CheckMyLottoAdapter();
         binding.recyclerView.setAdapter(adapter);
 
         lottoViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(LottoViewModel.class);
@@ -63,15 +66,25 @@ public class CheckMyLottoActivity extends AppCompatActivity {
                 binding.border5.setBackgroundResource(lotto.getDrwtNo5_background());
                 binding.border6.setBackgroundResource(lotto.getDrwtNo6_background());
                 binding.border7.setBackgroundResource(lotto.getBnusNo_background());
+
+                selectedLotto = lotto;
+                lottoViewModel.checkMyLotto(lotto);
             }
         });
 
         lottoViewModel.getWeeklyLottoData();
 
-        lottoViewModel.getAllLottos().observe(this, new Observer<List<UserLotto>>() {
+        lottoViewModel.getAllLottos().observe(this, new Observer<List<MyLotto>>() {
             @Override
-            public void onChanged(List<UserLotto> userLottos) {
-                adapter.setLottos(userLottos);
+            public void onChanged(List<MyLotto> myLottos) {
+
+            }
+        });
+
+        lottoViewModel.getAllCheckLottos().observe(this, new Observer<List<CheckMyLotto>>() {
+            @Override
+            public void onChanged(List<CheckMyLotto> checkUserLottos) {
+                adapter.setLottos(checkUserLottos);
             }
         });
 

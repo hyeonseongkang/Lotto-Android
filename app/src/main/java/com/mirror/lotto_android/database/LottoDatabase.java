@@ -8,9 +8,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.mirror.lotto_android.classes.UserLotto;
+import com.mirror.lotto_android.classes.MyLotto;
 
-@Database(entities = {UserLotto.class}, version = 1)
+@Database(entities = {MyLotto.class}, version = 1)
 public abstract class LottoDatabase  extends RoomDatabase {
 
     private static LottoDatabase instance;

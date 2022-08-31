@@ -5,12 +5,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import com.mirror.lotto_android.R;
+import com.mirror.lotto_android.classes.MyLotto;
 import com.mirror.lotto_android.classes.TempLotto;
-import com.mirror.lotto_android.classes.UserLotto;
 import com.mirror.lotto_android.databinding.ActivityCreateMyLottoBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
 
@@ -115,10 +113,10 @@ public class CreateMyLottoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 lottoViewModel.insert();
-                lottoViewModel.getAllLottos().observe(CreateMyLottoActivity.this, new Observer<List<UserLotto>>() {
+                lottoViewModel.getAllLottos().observe(CreateMyLottoActivity.this, new Observer<List<MyLotto>>() {
                     @Override
-                    public void onChanged(List<UserLotto> userLottos) {
-                        UserLotto userLotto = userLottos.get(userLottos.size() - 1);
+                    public void onChanged(List<MyLotto> userLottos) {
+                        MyLotto userLotto = userLottos.get(userLottos.size() - 1);
 
                         binding.lastN1.setText(userLotto.getDrwtNo1());
                         binding.lastN2.setText(userLotto.getDrwtNo2());
