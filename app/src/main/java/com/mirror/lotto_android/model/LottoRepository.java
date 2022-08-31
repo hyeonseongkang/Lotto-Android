@@ -85,7 +85,12 @@ public class LottoRepository {
 
     // 사용자가 요청한 날짜의 로또 데이터 가져오기
     public void setLottoData(int num) {
-       requestLottoData(num);
+        weeklyTurn += num;
+        if (weeklyTurn > getNextEpisodeBasedonDate()) {
+            Toast.makeText(application, "최신 회차 입니다.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        requestLottoData(weeklyTurn);
     }
 
     public void requestLottoData(int num) {

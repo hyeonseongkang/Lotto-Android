@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LottoAndroid">
-        <activity android:name=".view.MyLottoActivity"></activity>
+        <activity android:name=".view.CheckMyLottoActivity"></activity>
+        <activity android:name=".view.MyLottoListActivity" />
         <activity android:name=".view.CreateMyLottoActivity" />
         <activity
             android:name=".view.MainActivity"

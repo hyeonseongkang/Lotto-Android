@@ -8,34 +8,31 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.adapter.MyLottoAdapter;
 import com.mirror.lotto_android.classes.UserLotto;
-import com.mirror.lotto_android.databinding.ActivityMyLottoBinding;
+import com.mirror.lotto_android.databinding.ActivityMyLottoListBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class MyLottoActivity extends AppCompatActivity {
+public class MyLottoListActivity extends AppCompatActivity {
 
     private static final String TAG =  "MyNumberActivity";
 
-    ActivityMyLottoBinding binding;
+    ActivityMyLottoListBinding binding;
     LottoViewModel lottoViewModel;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMyLottoBinding.inflate(getLayoutInflater());
+        binding = ActivityMyLottoListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -50,10 +47,10 @@ public class MyLottoActivity extends AppCompatActivity {
             public void onChanged(List<UserLotto> userLottos) {
                 binding.progress.setVisibility(View.GONE);
                 adapter.setLottos(userLottos);
-                for (UserLotto userLotto: userLottos) {
-                    Log.d(TAG, userLotto.getDrwtNo1() + " " + userLotto.getDrwtNo2() + " " + userLotto.getDrwtNo3()
-                            + " " + userLotto.getDrwtNo4() + " " + userLotto.getDrwtNo5() + " " + userLotto.getDrwtNo6());
-                }
+//                for (UserLotto userLotto: userLottos) {
+//                    Log.d(TAG, userLotto.getDrwtNo1() + " " + userLotto.getDrwtNo2() + " " + userLotto.getDrwtNo3()
+//                            + " " + userLotto.getDrwtNo4() + " " + userLotto.getDrwtNo5() + " " + userLotto.getDrwtNo6());
+//                }
             }
         });
 

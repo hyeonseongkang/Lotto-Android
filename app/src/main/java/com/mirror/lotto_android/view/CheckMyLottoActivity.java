@@ -3,28 +3,38 @@ package com.mirror.lotto_android.view;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.mirror.lotto_android.R;
+import com.mirror.lotto_android.adapter.MyLottoAdapter;
 import com.mirror.lotto_android.classes.Lotto;
-import com.mirror.lotto_android.databinding.ActivityMainBinding;
+import com.mirror.lotto_android.classes.UserLotto;
+import com.mirror.lotto_android.databinding.ActivityCheckMyLottoBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
-    public static final String TAG = "MainActivity";
+public class CheckMyLottoActivity extends AppCompatActivity {
+    private static final String TAG =  "CheckMyLottoActivity";
 
-    ActivityMainBinding binding;
+    ActivityCheckMyLottoBinding binding;
 
     private LottoViewModel lottoViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityCheckMyLottoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerView.setHasFixedSize(true);
+
+        MyLottoAdapter adapter = new MyLottoAdapter();
+        binding.recyclerView.setAdapter(adapter);
 
         lottoViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(LottoViewModel.class);
         lottoViewModel.getLottoData().observe(this, new Observer<Lotto>() {
@@ -58,37 +68,33 @@ public class MainActivity extends AppCompatActivity {
 
         lottoViewModel.getWeeklyLottoData();
 
-        binding.createLotto.setOnClickListener(new View.OnClickListener() {
+        lottoViewModel.getAllLottos().observe(this, new Observer<List<UserLotto>>() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CreateMyLottoActivity.class);
-                startActivity(intent);
+            public void onChanged(List<UserLotto> userLottos) {
+                adapter.setLottos(userLottos);
             }
         });
 
-        binding.myLotto.setOnClickListener(new View.OnClickListener() {
+        binding.leftArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MyLottoListActivity.class);
-                startActivity(intent);
+                lottoViewModel.setLottoData(-1);
             }
         });
 
-        binding.qrCheck.setOnClickListener(new View.OnClickListener() {
+        binding.rightArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                lottoViewModel.setLottoData(1);
             }
         });
 
-        binding.check.setOnClickListener(new View.OnClickListener() {
+        binding.closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CheckMyLottoActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
-
 
     }
 }
