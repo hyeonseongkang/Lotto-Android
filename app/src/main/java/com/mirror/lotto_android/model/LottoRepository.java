@@ -466,7 +466,6 @@ public class LottoRepository {
             System.out.println(myLottoNum.get(0) + " " + myLottoNum.get(1) + " " + myLottoNum.get(2) + " " +
                     myLottoNum.get(3) + " " + myLottoNum.get(4) + " " + myLottoNum.get(5));
             for (int i = 0;  i < 6; i++) {
-
                 if (myLottoNum.contains(lottoNum.get(i))) {
                     int position = myLottoNum.indexOf(lottoNum.get(i));
                     myLottoNumBackground[position] = ballBackground(Integer.parseInt(lottoNum.get(i)));

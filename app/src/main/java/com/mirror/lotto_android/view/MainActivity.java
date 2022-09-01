@@ -1,13 +1,17 @@
 package com.mirror.lotto_android.view;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.mirror.lotto_android.classes.Lotto;
 import com.mirror.lotto_android.databinding.ActivityMainBinding;
 import com.mirror.lotto_android.viewmodel.LottoViewModel;
@@ -77,7 +81,9 @@ public class MainActivity extends AppCompatActivity {
         binding.qrCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                IntentIntegrator qrScan = new IntentIntegrator(MainActivity.this);
+                qrScan.setOrientationLocked(false); // 휴대폰 방향에 따라 가로, 세로로 자동 변경 (default: 세로)
+                qrScan.initiateScan();
             }
         });
 
@@ -88,7 +94,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if(result != null) {
+            if(result.getContents() == null) {
+                // todo
+            } else {
+                String uri = result.getContents();
+                if(uri != null){
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                    startActivity(intent);
+                }
+                // todo
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }
