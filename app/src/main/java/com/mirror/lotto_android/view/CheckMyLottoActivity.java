@@ -49,7 +49,7 @@ public class CheckMyLottoActivity extends AppCompatActivity {
                 binding.winningAmount.setText(lotto.getFirstWinamnt());
                 binding.salesAmount.setText(lotto.getTotSellamnt());
                 binding.winningTotalAmount.setText(lotto.getFirstAccumamnt());
-                binding.no.setText(lotto.getDrwNo());
+                binding.no.setText(lotto.getDrwNo() + "회차 당첨번호");
 
                 binding.ball1.setText(lotto.getDrwtNo1());
                 binding.ball2.setText(lotto.getDrwtNo2());

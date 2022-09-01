@@ -6,11 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".view.MyLottoListActivity">
 
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/close" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:layout_below="@+id/close_button"
+        android:layout_marginTop="5dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
@@ -27,13 +35,7 @@
     </RelativeLayout>
 
 
-    <ImageButton
-        android:id="@+id/close_button"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:background="@drawable/close" />
+
 
 
 </RelativeLayout>

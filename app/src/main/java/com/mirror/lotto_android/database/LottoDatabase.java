@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.mirror.lotto_android.classes.MyLotto;
 
-@Database(entities = {MyLotto.class}, version = 1)
+@Database(entities = {MyLotto.class}, version = 2)
 public abstract class LottoDatabase  extends RoomDatabase {
 
     private static LottoDatabase instance;

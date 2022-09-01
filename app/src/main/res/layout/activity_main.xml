@@ -38,7 +38,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:textColor="#000000"
-                        android:fontFamily="@font/scd4"
+                        android:fontFamily="@font/bm2"
                         android:textSize="13dp" />
 
                     <TextView
@@ -46,9 +46,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:fontFamily="@font/scd5"
+                        android:fontFamily="@font/bm2"
                         android:textColor="#000000"
-                        android:textSize="40dp" />
+                        android:textSize="22dp"
+                        android:layout_marginTop="3dp"/>
 
 
                 </LinearLayout>
@@ -252,7 +253,7 @@
                                 android:text="총판매액"
                                 android:textColor="#000000"
                                 android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:fontFamily="@font/scd5"/>
 
                             <TextView
                                 android:id="@+id/salesAmount"
@@ -275,7 +276,7 @@
                                 android:text="1등 당첨 총금액"
                                 android:textColor="#000000"
                                 android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:fontFamily="@font/scd5"/>
 
                             <TextView
                                 android:id="@+id/winningTotalAmount"
@@ -298,7 +299,7 @@
                                 android:text="1등 당첨자 수"
                                 android:textColor="#000000"
                                 android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:fontFamily="@font/scd5"/>
 
                             <TextView
                                 android:id="@+id/winner"
@@ -321,7 +322,7 @@
                                 android:text="1등 당첨 금액"
                                 android:textColor="#000000"
                                 android:textSize="16dp"
-                                android:fontFamily="@font/scd4"/>
+                                android:fontFamily="@font/scd5"/>
 
                             <TextView
                                 android:id="@+id/winningAmount"
@@ -390,6 +391,7 @@
                                         android:layout_centerInParent="true"
                                         android:text="7"
                                         android:textColor="#FFFFFF"
+                                        android:fontFamily="@font/bm2"
                                         android:textSize="16dp" />
                                 </RelativeLayout>
 
@@ -404,6 +406,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_centerInParent="true"
                                         android:text="7"
+                                        android:fontFamily="@font/bm2"
                                         android:textColor="#FFFFFF"
                                         android:textSize="16dp" />
                                 </RelativeLayout>
@@ -419,6 +422,7 @@
                                         android:layout_height="wrap_content"
                                         android:layout_centerInParent="true"
                                         android:text="7"
+                                        android:fontFamily="@font/bm2"
                                         android:textColor="#FFFFFF"
                                         android:textSize="16dp" />
                                 </RelativeLayout>

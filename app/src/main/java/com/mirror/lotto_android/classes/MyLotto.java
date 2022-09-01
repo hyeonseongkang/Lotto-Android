@@ -9,6 +9,8 @@ public class MyLotto {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
+    private String create_date;
+
     private String drwtNo1;
     private String drwtNo2;
     private String drwtNo3;
@@ -23,7 +25,8 @@ public class MyLotto {
     private int drwtNo5_background;
     private int drwtNo6_background;
 
-    public MyLotto(String drwtNo1, String drwtNo2, String drwtNo3, String drwtNo4, String drwtNo5, String drwtNo6, int drwtNo1_background, int drwtNo2_background, int drwtNo3_background, int drwtNo4_background, int drwtNo5_background, int drwtNo6_background) {
+    public MyLotto(String create_date, String drwtNo1, String drwtNo2, String drwtNo3, String drwtNo4, String drwtNo5, String drwtNo6, int drwtNo1_background, int drwtNo2_background, int drwtNo3_background, int drwtNo4_background, int drwtNo5_background, int drwtNo6_background) {
+        this.create_date = create_date;
         this.drwtNo1 = drwtNo1;
         this.drwtNo2 = drwtNo2;
         this.drwtNo3 = drwtNo3;
@@ -44,6 +47,10 @@ public class MyLotto {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCreate_date() {
+        return create_date;
     }
 
     public String getDrwtNo1() {

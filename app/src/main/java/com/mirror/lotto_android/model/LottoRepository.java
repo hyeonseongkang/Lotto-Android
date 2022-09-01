@@ -3,9 +3,11 @@ package com.mirror.lotto_android.model;
 import android.app.Application;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -26,6 +28,8 @@ import com.mirror.lotto_android.retrofit.LottoDataResponse;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -382,6 +386,7 @@ public class LottoRepository {
 
         private InsertLottoAsyncTask(LottoDao lottoDao) { this.lottoDao = lottoDao;}
 
+        @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
         protected Void doInBackground(Void... voids) {
             for(int i = 0; i < 6; i++){
@@ -393,7 +398,9 @@ public class LottoRepository {
 
             Arrays.sort(lottoNum);
 
-            MyLotto userLotto = new MyLotto(String.valueOf(lottoNum[0]), String.valueOf(lottoNum[1]), String.valueOf(lottoNum[2]), String.valueOf(lottoNum[3]), String.valueOf(lottoNum[4]), String.valueOf(lottoNum[5]),
+            String create_data = getToday();
+
+            MyLotto userLotto = new MyLotto(create_data, String.valueOf(lottoNum[0]), String.valueOf(lottoNum[1]), String.valueOf(lottoNum[2]), String.valueOf(lottoNum[3]), String.valueOf(lottoNum[4]), String.valueOf(lottoNum[5]),
                     ballBackground(lottoNum[0]), ballBackground(lottoNum[1]), ballBackground(lottoNum[2]), ballBackground(lottoNum[3]), ballBackground(lottoNum[4]), ballBackground(lottoNum[5]));
 
             lottoDao.insert(userLotto);
@@ -455,12 +462,12 @@ public class LottoRepository {
             myLottoNum.add(myLotto.getDrwtNo5());
             myLottoNum.add(myLotto.getDrwtNo6());
 
-            int[] myLottoNumBackground = {R.drawable.activity_main_basics_ball,
-                    R.drawable.activity_main_basics_ball,
-                    R.drawable.activity_main_basics_ball,
-                    R.drawable.activity_main_basics_ball,
-                    R.drawable.activity_main_basics_ball,
-                    R.drawable.activity_main_basics_ball};
+            int[] myLottoNumBackground = {R.drawable.non_ball,
+                    R.drawable.non_ball,
+                    R.drawable.non_ball,
+                    R.drawable.non_ball,
+                    R.drawable.non_ball,
+                    R.drawable.non_ball};
 
             System.out.println("------------");
             System.out.println(myLottoNum.get(0) + " " + myLottoNum.get(1) + " " + myLottoNum.get(2) + " " +
@@ -503,6 +510,17 @@ public class LottoRepository {
 
         }
        allCheckLottos.setValue(checkMyLottos);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public String getToday() {
+        // 현재 날짜 구하기
+        LocalDate now = LocalDate.now();
+        // 포맷 정의
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd");
+        // 포맷 적용
+        String today = now.format(formatter);
+        return today;
     }
 
 }

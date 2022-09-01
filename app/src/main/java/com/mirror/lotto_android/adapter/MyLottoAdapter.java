@@ -47,6 +47,8 @@ public class MyLottoAdapter extends RecyclerView.Adapter<MyLottoAdapter.LottoHol
         holder.num4.setText(userLotto.getDrwtNo4());
         holder.num5.setText(userLotto.getDrwtNo5());
         holder.num6.setText(userLotto.getDrwtNo6());
+
+        holder.create_date.setText(userLotto.getCreate_date());
     }
 
     @Override
@@ -76,6 +78,8 @@ public class MyLottoAdapter extends RecyclerView.Adapter<MyLottoAdapter.LottoHol
         private TextView num5;
         private TextView num6;
 
+        private TextView create_date;
+
         public LottoHolder(View itemView) {
             super(itemView);
             back1 = itemView.findViewById(R.id.back1);
@@ -91,6 +95,8 @@ public class MyLottoAdapter extends RecyclerView.Adapter<MyLottoAdapter.LottoHol
             num4 = itemView.findViewById(R.id.num4);
             num5 = itemView.findViewById(R.id.num5);
             num6 = itemView.findViewById(R.id.num6);
+
+            create_date = itemView.findViewById(R.id.create_date);
 
         }
 
