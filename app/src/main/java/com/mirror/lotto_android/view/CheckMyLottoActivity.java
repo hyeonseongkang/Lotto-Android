@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.adapter.CheckMyLottoAdapter;
 import com.mirror.lotto_android.classes.CheckMyLotto;
 import com.mirror.lotto_android.classes.Lotto;
@@ -32,6 +33,8 @@ public class CheckMyLottoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityCheckMyLottoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        overridePendingTransition(R.anim.fadein_left, R.anim.none);
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setHasFixedSize(true);
@@ -106,6 +109,7 @@ public class CheckMyLottoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                overridePendingTransition(R.anim.none, R.anim.fadeout_left);
             }
         });
 

@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import android.view.View;
 
+import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.classes.MyLotto;
 import com.mirror.lotto_android.classes.TempLotto;
 import com.mirror.lotto_android.databinding.ActivityCreateMyLottoBinding;
@@ -28,6 +29,8 @@ public class CreateMyLottoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityCreateMyLottoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        overridePendingTransition(R.anim.fadein_left, R.anim.none);
 
         lottoViewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication())).get(LottoViewModel.class);
 
@@ -85,6 +88,7 @@ public class CreateMyLottoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                overridePendingTransition(R.anim.none, R.anim.fadeout_left);
             }
         });
 

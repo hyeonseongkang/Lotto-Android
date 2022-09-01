@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 
+import com.mirror.lotto_android.R;
 import com.mirror.lotto_android.adapter.MyLottoAdapter;
 import com.mirror.lotto_android.classes.MyLotto;
 import com.mirror.lotto_android.databinding.ActivityMyLottoListBinding;
@@ -33,6 +34,8 @@ public class MyLottoListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMyLottoListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        overridePendingTransition(R.anim.fadein_left, R.anim.none);
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setHasFixedSize(true);
@@ -71,6 +74,7 @@ public class MyLottoListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+                overridePendingTransition(R.anim.none, R.anim.fadeout_left);
             }
         });
     }
